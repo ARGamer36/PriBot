@@ -16,7 +16,6 @@ public class RRAdd extends PrefixCommand {
         name = "rrAdd";
         description = "Adds a reaction role";
         ReactionRoles = reactionRoles;
-        System.out.println(ReactionRoles);
     }
 
     @Override
