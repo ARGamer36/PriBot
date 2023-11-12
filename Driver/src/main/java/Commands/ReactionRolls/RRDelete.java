@@ -2,21 +2,20 @@ package Commands.ReactionRolls;
 
 import Commands.Abstracts.PrefixCommand;
 import Main.ClearanceChecks;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.exceptions.InsufficientPermissionException;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class RRDelete extends PrefixCommand {
-    List<ReactionRole> ReactionRoles;
+    HashMap<Guild, List<ReactionRole>> GuildsReactionRoles;
 
-    public RRDelete(List<ReactionRole> reactionRoles) {
+    public RRDelete(HashMap<Guild, List<ReactionRole>> guildsReactionRoles) {
         name = "rrDel";
         description = "Deletes a reaction role";
-        ReactionRoles = reactionRoles;
+        GuildsReactionRoles = guildsReactionRoles;
     }
 
     @Override
@@ -27,14 +26,15 @@ public class RRDelete extends PrefixCommand {
                 String messageId = commandInfo[1];
                 Role role = event.getGuild().getRoleById(commandInfo[2].replace("<@&", "").replace(">", ""));
                 ReactionRole delete = null;
-                for (ReactionRole reactionRole : ReactionRoles) {
+                List<ReactionRole> reactionRoles = GuildsReactionRoles.get(event.getGuild());
+                for (ReactionRole reactionRole : reactionRoles) {
                     if (reactionRole.getMessageId().equalsIgnoreCase(messageId)
                             && reactionRole.getRole().equals(role)) {
                         delete = reactionRole;
                     }
                 }
-                ReactionRoles.remove(delete);
-                ReactionRoleChecks.updateReactionRolesFile(event.getGuild(), ReactionRoles);
+                reactionRoles.remove(delete);
+                ReactionRoleChecks.updateReactionRolesFile(event.getGuild(), reactionRoles);
                 event.getMessage().reply("A Reaction Role deleted").queue();
             } catch (IndexOutOfBoundsException e) {
                 event.getMessage().reply("Command: !rrDel {messageId} @role").queue();
