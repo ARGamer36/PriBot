@@ -1,7 +1,7 @@
-package Commands.ReactionRolls;
+package commands.reactionRolls;
 
-import Information.FileAccessor;
-import Information.ServerStorage;
+import information.FileAccessor;
+import information.ServerStorage;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.emoji.Emoji;

@@ -1,4 +1,4 @@
-package Commands.ReactionRolls;
+package commands.reactionRolls;
 
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.emoji.Emoji;

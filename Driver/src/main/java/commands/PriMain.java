@@ -1,10 +1,10 @@
-package Commands;
+package commands;
 
-import Commands.ReactionRolls.RRAdd;
-import Commands.ReactionRolls.RRDelete;
-import Commands.ReactionRolls.ReactionRole;
-import Commands.ReactionRolls.ReactionRoleChecks;
-import Main.MainCommands;
+import commands.reactionRolls.RRAdd;
+import commands.reactionRolls.RRDelete;
+import commands.reactionRolls.ReactionRole;
+import commands.reactionRolls.ReactionRoleChecks;
+import main.MainCommands;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;

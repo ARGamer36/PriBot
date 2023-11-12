@@ -1,5 +1,5 @@
-import Commands.PriMain;
-import Main.BotDriver;
+import commands.PriMain;
+import main.BotDriver;
 import net.dv8tion.jda.api.entities.Activity;
 
 import javax.security.auth.login.LoginException;

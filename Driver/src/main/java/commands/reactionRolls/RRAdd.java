@@ -1,7 +1,7 @@
-package Commands.ReactionRolls;
+package commands.reactionRolls;
 
-import Commands.Abstracts.PrefixCommand;
-import Main.ClearanceChecks;
+import commands.abstracts.PrefixCommand;
+import main.ClearanceChecks;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
