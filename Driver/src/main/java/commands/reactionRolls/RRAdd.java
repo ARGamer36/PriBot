@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class RRAdd extends PrefixCommand {
-    HashMap<Guild, List<ReactionRole>> GuildsReactionRoles;
+    private HashMap<Guild, List<ReactionRole>> GuildsReactionRoles;
     public RRAdd(HashMap<Guild, List<ReactionRole>> guildsReactionRoles) {
         name = "rrAdd";
         description = "Adds a reaction role";

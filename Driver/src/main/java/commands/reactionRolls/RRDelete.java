@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class RRDelete extends PrefixCommand {
-    HashMap<Guild, List<ReactionRole>> GuildsReactionRoles;
+    private HashMap<Guild, List<ReactionRole>> GuildsReactionRoles;
 
     public RRDelete(HashMap<Guild, List<ReactionRole>> guildsReactionRoles) {
         name = "rrDel";
